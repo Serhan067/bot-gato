@@ -169,13 +169,18 @@ async def pokemon(ctx, pokemon_name = "ditto"):
 
 @bot.command()
 async def hayvan(ctx, a):
+    
     for k,v in hayvanr.items():
+        
         
         if a.lower() == k:
             await ctx.send(f"{v}")
             with open(hayvanresim[k], "rb") as r:
                 kb = discord.File(r)
                 await ctx.send(file = kb)
+        else:
+            await ctx.send("Bu hayvan bulunamadı, geçerli hayvanlar:kedi,köpek,fil,maymun,kuş,panda,ayı,deve")
+        
 
 
 
